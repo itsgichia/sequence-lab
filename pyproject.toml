@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seqlab"
+version = "0.1.0"
+description = "Readable bioinformatics routines: sequence statistics, alignment, phylogenetics, variant consequences and pharmacogenomics"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Gichia Muiruri" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/itsgichia/sequence-lab"
+"Live tool" = "https://gichia-portfolio.vercel.app/lab/seq"
+
+[project.scripts]
+seqlab = "seqlab.cli:main"
+
+[tool.setuptools]
+packages = ["seqlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
